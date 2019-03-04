@@ -1,10 +1,11 @@
 class TweetsController < ApplicationController
   before_action :set_tweet, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, execpt: [:index, :show]
 
   # GET /tweets
   # GET /tweets.json
   def index
-    @tweets = Tweet.all.order("created_at ASC")
+    @tweets = Tweet.all.order("created_at DESC")
     @tweet = Tweet.new
   end
 
