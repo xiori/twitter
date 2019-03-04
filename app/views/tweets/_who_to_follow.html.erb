@@ -2,58 +2,25 @@
     <nav class="panel">
         <p class="panel-heading">Qui suivre ?</p>
 
-
-        <div class="panel-block">
-            <article class="media">
-                <div class="media-left">
-                    <figure class="image is-32x32">
-                        <img src="https://bulma.io/images/placeholders/32x32.png">
-                    </figure>
-                </div>
-                <div class="media-content">
-                    <div class="content">
-                        <p>
-                            <strong>Test2</strong>
-                            <small>@test2</small>
-                        </p>
-                    </div>
-                </div>
-            </article>
-        </div>
-        <div class="panel-block">
-            <article class="media">
-                <div class="media-left">
-                    <figure class="image is-32x32">
-                        <img src="https://bulma.io/images/placeholders/32x32.png">
-                    </figure>
-                </div>
-                <div class="media-content">
-                    <div class="content">
-                        <p>
-                            <strong>Test3</strong>
-                            <small>@test3</small>
-                        </p>
-                    </div>
-                </div>
-            </article>
-        </div>
+        <% @users.take(5).each do |user| %>
             <div class="panel-block">
-            <article class="media">
-                <div class="media-left">
-                    <figure class="image is-32x32">
-                        <img src="https://bulma.io/images/placeholders/32x32.png">
-                    </figure>
-                </div>
-                <div class="media-content">
-                    <div class="content">
-                        <p>
-                            <strong>Test4</strong>
-                            <small>@test4</small>
-                        </p>
+                <article class="media">
+                    <div class="media-left">
+                        <figure class="image is-32x32">
+                            <%= gravatar_image_tag(user.email, size: 64, alt: user.name) %>
+                        </figure>
                     </div>
-                </div>
-            </article>
-        </div>
+                    <div class="media-content">
+                        <div class="content">
+                            <p>
+                                <strong><%= user.name%></strong>
+                                <small><i>@<%= user.username %></i></small>
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        <% end %>
 
     </nav>
 </div>
