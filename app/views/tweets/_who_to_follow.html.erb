@@ -3,6 +3,8 @@
         <p class="panel-heading">Qui suivre ?</p>
 
         <% @users.take(5).each do |user| %>
+
+         <% if user_signed_in? && current_user.id != user.id %>
             <div class="panel-block">
                 <article class="media">
                     <div class="media-left">
@@ -20,6 +22,7 @@
                     </div>
                 </article>
             </div>
+            <% end %>
         <% end %>
 
     </nav>
