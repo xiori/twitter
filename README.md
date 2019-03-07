@@ -1,24 +1,25 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## procedure installation
+Commencer par lancer 
+```bash
+bundle install
+```
+ensuite lancer 
+```bash
+rails db:migrate
+```
+installer mailcatcher
+```ruby
+gem install mailcatcher
+```
+lancer mailcatcher en terminal
+```bash
+mailcatcher
+```
+lancer le serveur
+```bash
+rails s
+```
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ....
